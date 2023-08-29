@@ -1,0 +1,116 @@
+.altura-c{
+    height: 30vh;
+}
+
+.img-carrusel{
+    height: 30vh;
+    object-fit: cover;
+    object-position: bottom;
+
+}
+
+.custom-card-img{
+    width: 100%;
+    height: 200px;
+
+}
+
+.card-alto{
+    height:40vh;
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.img-logo{
+    width: 20vw;
+    height: 10vh;
+}
+
+.Abajo{
+    background-color: rgb(185, 185, 185);
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.socialMedia{
+    padding: 20px;
+}
+
+.socialMedia img{
+    height: 50px;
+    padding: 10px;
+}
+
+.Abajo h5{
+    padding: 10px;
+    margin-right: 1rem;
+}
+
+.cuerpo{
+    background-color: rgb(228, 222, 212);
+}
+
+/*contact*/
+
+.informacion{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacion form{
+    display: flex;
+    flex-direction: column;
+}
+
+.table-bordered th td tr{
+    border: 8px solid black;
+    padding: 20px;
+
+
+}
+
+.table-bordered thead tbody{
+    border: 8px solid black;
+    padding: 20px ;
+}
+
+.empty-cell {
+    width: 100px;
+    height: 50px; 
+}
+
+.informacionDetallada{
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 189, 217);
+}
+
+.informacionDetallada img{
+    width: 40vw;
+    height: 30vh;
+    margin: 2rem;
+    padding: 30px;
+}
+.detalle{
+    width:40vw;
+    height: 30vh;
+}
+
+
+
+
+
+
+
