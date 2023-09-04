@@ -13,7 +13,7 @@ const misTarjetas = document.querySelector(".misTarjetas");
 for (let i = 0; i < data.events.length; i++) {
     if (data.events[i].date>"2023-01-01"){
         let nuevaEtiqueta = document.createElement("div");
-    nuevaEtiqueta.innerHTML = `<div class="col-lg-3 col-md-4 col-sm-12 d-flex justify-content-center pb-3 pt-3">
+    nuevaEtiqueta.innerHTML = `<div class="col-lg-3 col-md-4 col-sm-12  pb-3 pt-3">
 <div class="card" style="width: 18rem;">
     <img src="${data.events[i].image}" class="card-img-top custom-card-img" alt="food">
     <div class="card-body">
