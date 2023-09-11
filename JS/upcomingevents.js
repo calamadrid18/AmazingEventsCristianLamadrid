@@ -11,9 +11,9 @@ menu.addEventListener('click', function () {
 
 const misTarjetas = document.querySelector(".misTarjetas");
 for (let i = 0; i < data.events.length; i++) {
-    
-    let nuevaEtiqueta = document.createElement("div");
-    nuevaEtiqueta.innerHTML = `<div class="col-xl-4  col-md-4 col-sm-12  pb-3 pt-3">
+    if (data.events[i].date>"2023-01-01"){
+        let nuevaEtiqueta = document.createElement("div");
+    nuevaEtiqueta.innerHTML = `<div class="col-lg-3 col-md-4 col-sm-12  pb-3 pt-3">
 <div class="card" style="width: 18rem;">
     <img src="${data.events[i].image}" class="card-img-top custom-card-img" alt="food">
     <div class="card-body">
@@ -23,16 +23,12 @@ for (let i = 0; i < data.events.length; i++) {
         </div>
         <div class="d-flex justify-content-between">
         <h5>Price: ${data.events[i].price}</h5>
-        <a href="./detail.html">DetailS</a>
+        <a href="./detail.html">Details</a>
         </div>
     </div>
 </div>
 </div>`
 misTarjetas.appendChild(nuevaEtiqueta)
+    }
+    
 }
-
-
-
-
-
-
