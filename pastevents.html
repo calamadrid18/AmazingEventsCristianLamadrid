@@ -58,7 +58,7 @@
               <div class="carousel-item active">
                 <img src="./assets/optional_banner_1.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>HOME</h1>
+                  <h1>UPCOMINGEVENTS</h1>
                 </div>
               </div>
               <div class="carousel-item">
@@ -70,19 +70,19 @@
               <div class="carousel-item">
                 <img src="./assets/optional_banner_3.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>PASTEVENTS</h1>
+                  <h1>UPCOMINGEVENTS</h1>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="./assets/optional_banner_4.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>CONTACTS</h1>
+                  <h1>UPCOMINGEVENTS</h1>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="./assets/optional_banner_5.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>STATS</h1>
+                  <h1>UPCOMINGEVENTS</h1>
                 </div>
               </div>
             </div>
@@ -98,28 +98,43 @@
     </header>
     <main class="cuerpo">
         <nav class="d-flex justify-content-around w-100 navbar navbar-expand-lg bg-body-tertiary">
-            <label>
-                <input type="checkbox" name="option1" value="opcion1"> category
-            </label>
-            <label>
-                <input type="checkbox" name="option1" value="opcion1"> category
-            </label>
-            <label>
-                <input type="checkbox" name="option1" value="opcion1"> category
-            </label>
-            <label>
-                <input type="checkbox" name="option1" value="opcion1"> category
-            </label>
-                <form class="w d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+          
+              <label>
+                <input type="checkbox" name="category" value="todos" checked> Mostrar Todos
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="Food Fair"> Food Fair
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="Museum"> Museum
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="Costume Party"> Costume Party
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="Music Concert"> Music Concert
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="Race"> Race
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="Book Exchange"> Book Exchange
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="Cinema"> Cinema
+              </label>
+            
+              <form class="w d-flex" role="search" id="formularioBuscador">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="buscadorInput">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form> 
         </nav>
-        <div class="container">
+        <div class="container-fluid">
             <div class="d-flex flex-wrap p misTarjetas pb-5 justify-content-around">
-                
+              
             </div>
-        </div>    
+        </div>
+
     </main>
     <footer class="Abajo">
         <div class="socialMedia">
@@ -130,11 +145,11 @@
         <h5>COHORT FS051</h5>
  
      </footer>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-     crossorigin="anonymous">
-     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+    </script>
      <script src="./data.js"></script>
-     <script src="./JS/pastevents.js"></script>
+     <script src="./JS/upcomingevents.js"></script>
 </body>
 </html>
