@@ -1,5 +1,5 @@
 const menu = document.querySelector(".buttonJS");
-const menuList = document.querySelector(".perro");
+const menuList = document.querySelector(".ocultar");
 
 menu.addEventListener("click", function () {
   menuList.classList.toggle("d-none");
