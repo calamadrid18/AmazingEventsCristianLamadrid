@@ -8,7 +8,7 @@ menu.addEventListener("click", function () {
 const misTarjetas = document.querySelector(".misTarjetas");
 const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
 const arrayCategoryCheckbox= Array.from(categoryCheckboxes);
-console.log(arrayCategoryCheckbox);
+
 
 let selectedCategory = "todos";
 
