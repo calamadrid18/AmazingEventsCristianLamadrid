@@ -7,24 +7,21 @@ menu.addEventListener("click", function () {
 
 const misTarjetas = document.querySelector(".misTarjetas");
 const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
+const arrayCategoryCheckbox= Array.from(categoryCheckboxes);
+console.log(arrayCategoryCheckbox);
 
 let selectedCategory = "todos";
+
 
 function handleCheckboxChange(event) {
   misTarjetas.innerHTML = "";
   const newCategory = event.target.value;
-
-  categoryCheckboxes.forEach((checkbox) => {
-    if (checkbox !== event.target) {
-      checkbox.checked = false;
-    }
-  });
-
   selectedCategory = newCategory;
+  let prueba = arrayCategoryCheckbox.filter(check => check.checked==true);
+  
 
   for (let i = 0; i < data.events.length; i++) {
     const event = data.events[i];
-
     if (isChecked("todos") || isChecked(event.category)) {
       let nuevaEtiqueta = document.createElement("div");
       nuevaEtiqueta.innerHTML = `<div class="col-lg-3 col-md-4 col-sm-12 pb-3 pt-3">
@@ -45,6 +42,11 @@ function handleCheckboxChange(event) {
       misTarjetas.appendChild(nuevaEtiqueta);
     }
   }
+  if (prueba<1) {
+    let nuevaEtiqueta = document.createElement("div");
+    nuevaEtiqueta.innerHTML="<div>no hay eventos seleccionados</div>"
+    misTarjetas.appendChild(nuevaEtiqueta)
+  }
 }
 
 for (const checkbox of categoryCheckboxes) {
@@ -55,6 +57,7 @@ function isChecked(value) {
   const checkbox = document.querySelector(
     `input[name="category"][value="${value}"]`
   );
+ 
   return checkbox && checkbox.checked;
 }
 
@@ -74,3 +77,4 @@ formularioBuscador.addEventListener("submit", function (e) {
   const buscador = buscadorInput.value.toLowerCase();
   mostrarAlerta(buscador);
 });
+
