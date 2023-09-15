@@ -95,65 +95,51 @@
           </div>
     </header>
     <main class="cuerpo">
-        <div class="container mt-5 p-4">
-            
-            <table class="table border border-black">
-                
-                 <tr>
-                    <th class=" bg-danger-subtle border border-black" colspan="3">Upcomingevents Events statistics by category</th>
-                    <th></th>
-                    <th></th>
-                 </tr>
-          
+        <div class="d-flex justify-content-center">
+            <table class="tablastats">
+              <thead>
                 <tr>
-                        <td class="border border-black">events with highest % of assistance</td>
-                        <td class="border border-black" >events with lowest % of assistance</td>
-                        <td class="border border-black">events with loger capacity</td>
-                 </tr>
-                </tbody>
-                <thead>
-                    <tr>
-                        <th class="bg-danger-subtle border border-black" colspan="3">Upcoming Events statistics by category</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border border-black">categoria</td>
-                        <td class="border border-black">renueves</td>
-                        <td class="border border-black"> assistance</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-black empty-cell" ></td>
-                        <td class="border border-black empty-cell"></td>
-                        <td class="border border-black empty-cell"></td>
-                    </tr>
-                </tbody>
-                <thead>
-                    <tr>
-                        <th class="bg-danger-subtle border border-black" colspan="3">Post Events statistics by category</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border border-black">categoria</td>
-                        <td class="border border-black">renueves</td>
-                        <td class="border border-black" >assistance</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-black empty-cell" > </td>
-                        <td class="border border-black empty-cell" ></td>
-                        <td class="border border-black empty-cell " ></td>
-                       
-                    </tr>
-                    <tr>
-                        <td class="border border-black empty-cell" > </td>
-                        <td class="border border-black empty-cell" ></td>
-                        <td class="border border-black empty-cell" ></td>
-                       
-                    </tr>
-                </tbody>
+                  <th colspan="3">Events statistics</th>
+                </tr>
+              </thead>
+              <tbudy>
+                <tr>
+                  <td>Events with highest % of assistance</td>
+                  <td>Events with lowest % of assistance</td>
+                  <td>Events with larger capacity</td>
+                </tr>
+                <tr>
+                  <td id="mayorPje"></td>
+                  <td id="minimoPje" ></td>
+                  <td id="maxCapacidad" ></td>
+                </tr>
+              </tbudy>
             </table>
         </div>
+        <div class="d-flex justify-content-center">
+            <table class="tablastats">
+                <thead>
+                  <tr>
+                    <th colspan="3">Upcoming Events statistics by category</th>
+                  </tr>
+                </thead>
+                <tbody id="segundaTabla" >
+
+                </tbody>
+            </table>
+        </div>  
+        <div class="d-flex justify-content-center" >
+             <table class="tablastats">
+                <thead>
+                  <tr>
+                    <th colspan="3">Past Events statistics by category</th>
+                  </tr>
+                </thead>
+                <tbody id="tercerTabla" >
+
+                </tbody>
+            </table>
+        </div> 
     </main>
     <footer class="Abajo">
         <div class="socialMedia">
@@ -161,11 +147,11 @@
          <img src="./assets/instagram.png" alt="">
          <img src="./assets/facebook.png" alt="">
         </div>
-        <h5>COHORT</h5>
+        <h5>COHORT 51</h5>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-    <script src="./JS/index.js"></script>
+    <script type="module" src="./JS/stats.js"></script>
 </body>
 </html>
