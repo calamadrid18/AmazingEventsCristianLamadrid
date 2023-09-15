@@ -20,7 +20,7 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class=" d-flex  perro" id="navbarNav" >
+                <div class=" d-flex  ocultar" id="navbarNav" >
                     
                     <ul class="navbar-nav text-center ">
                         <li class="nav-item">
@@ -58,31 +58,31 @@
               <div class="carousel-item active">
                 <img src="./assets/optional_banner_1.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>UPCOMINGEVENTS</h1>
+                  <h1>PASTEVENTS</h1>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="./assets/optional_banner_2.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption  ">
-                  <h1>UPCOMINGEVENTS</h1>
+                  <h1>PASTEVENTS</h1>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="./assets/optional_banner_3.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>UPCOMINGEVENTS</h1>
+                  <h1>PASTEVENTS</h1>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="./assets/optional_banner_4.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>UPCOMINGEVENTS</h1>
+                  <h1>PASTEVENTS</h1>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="./assets/optional_banner_5.jpg" class="img-carrusel d-block w-100" alt="...">
                 <div class="carousel-caption ">
-                  <h1>UPCOMINGEVENTS</h1>
+                  <h1>PASTEVENTS</h1>
                 </div>
               </div>
             </div>
@@ -99,38 +99,19 @@
     <main class="cuerpo">
         <nav class="d-flex justify-content-around w-100 navbar navbar-expand-lg bg-body-tertiary">
           
-              <label>
-                <input type="checkbox" name="category" value="todos" checked> Mostrar Todos
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Food Fair"> Food Fair
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Museum"> Museum
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Costume Party"> Costume Party
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Music Concert"> Music Concert
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Race"> Race
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Book Exchange"> Book Exchange
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Cinema"> Cinema
-              </label>
+              <div class="checks" ></div>
+
+              <div id="contenedorChecks" >
+
+              </div>
             
-              <form class="w d-flex" role="search" id="formularioBuscador">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="buscadorInput">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form> 
+            
+              <select id="selects" name="category" title="lugares">
+
+              </select>
         </nav>
-        <div class="container-fluid">
-            <div class="d-flex flex-wrap p misTarjetas pb-5 justify-content-around">
+        <div class="container-fluid prueba">
+            <div id="contenedoresCards" class="d-flex flex-wrap p pb-5 justify-content-around">
               
             </div>
         </div>

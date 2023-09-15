@@ -99,38 +99,19 @@
     <main class="cuerpo">
         <nav class="d-flex justify-content-around w-100 navbar navbar-expand-lg bg-body-tertiary">
           
-              <label>
-                <input type="checkbox" name="category" value="todos" checked> Mostrar Todos
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Food Fair"> Food Fair
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Museum"> Museum
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Costume Party"> Costume Party
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Music Concert"> Music Concert
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Race"> Race
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Book Exchange"> Book Exchange
-              </label>
-              <label>
-                <input type="checkbox" name="category" value="Cinema"> Cinema
-              </label>
+              <div class="checks" ></div>
+
+              <div id="contenedorChecks" >
+
+              </div>
             
-              <form class="w d-flex" role="search" id="formularioBuscador">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="buscadorInput">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form> 
+            
+              <select id="selects" name="category" title="lugares">
+
+              </select>
         </nav>
         <div class="container-fluid prueba">
-            <div class="d-flex flex-wrap p misTarjetas pb-5 justify-content-around">
+            <div id="contenedoresCards" class="d-flex flex-wrap p pb-5 justify-content-around">
               
             </div>
         </div>
@@ -149,7 +130,8 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous">
     </script>
-     <script src="./data.js"></script>
-     <script src="./JS/index.js"></script>
+    <script src="./data.js"></script>
+
+     <script type="module" src="./JS/main.js"></script>
 </body>
 </html>
