@@ -1,7 +1,6 @@
 
 
 
-
 /*---------------------------- CrearEstructuraCheckbox------------------------------------*/
 
 export function crearEstructuraCheck(string) {
@@ -22,7 +21,7 @@ export function imprimirCheckBox(referenciaHTML, arrayString) {
   
     referenciaHTML.innerHTML = estructura;
   }
-  imprimirCheckBox(contenedorChecks, arrayCategory);
+  
 
 
 
@@ -40,11 +39,11 @@ export function imprimirSelect(array, refernciaHTML) {
     refernciaHTML.innerHTML = estructura;
   }
   
-  imprimirSelect(arrayNombreEvents, select);
+  
 
 /*----------------------------  crearCards ------------------------------------*/
 export function crearEstructuraCards(objeto) {
-    return `<div class="col-lg-3 col-md-4 col-sm-12 pb-3 pt-3">
+    return `<div class="col-lg-3 col-md-4 col-sm-12 pb-3 pt-3 d-block tarjeta">
     <div class="card" style="width: 18rem;">
     <img src="${objeto.image}" class="card-img-top custom-card-img" alt="food">
     <div class="card-body">
@@ -54,7 +53,7 @@ export function crearEstructuraCards(objeto) {
         </div>
         <div class="d-flex justify-content-between">
         <h5>Price: ${objeto.price}</h5>
-        <a href="./detail.html">Details</a>
+        <a href="./detail.html?parameter=${objeto._id}">Details</a>
         </div>
     </div>
     </div>
@@ -65,12 +64,21 @@ export function crearEstructuraCards(objeto) {
 /*----------------------------  imprimirCards ------------------------------------*/
 export function imprimirCards(array, refernciaHTML) {
     let estructura = "";
-    for (const objeto of array) {
-      estructura += crearEstructuraCards(objeto);
+    for (const objetoT of array) {
+      estructura += crearEstructuraCards(objetoT);
+     
     }
     refernciaHTML.innerHTML = estructura;
   }
-  imprimirCards(data.events, contenedoresCards);
+  
+export function imprimirCardsPast (pastEvents, refernciaHTML){
+  let estructura = "";
+  for (const objetoT of pastEvents) {
+    estructura += crearEstructuraCards(objetoT);
+    console.log(estructura);
+  }
+  refernciaHTML.innerHTML = estructura;
+}
 
 /*----------------------------  FiltroCheck ------------------------------------*/
 export function filtradoPorCheck(array) {
@@ -83,7 +91,7 @@ export function filtradoPorCheck(array) {
     const objetosFiltradosCheck = array.filter((objeto) =>
       checkedValues.includes(objeto.category)
     );
-  
+    console.log(objetosFiltradosCheck);
     return objetosFiltradosCheck;
   }
 
@@ -100,6 +108,7 @@ export function filtradosPorSelect(array, selectOption) {
 /*-----------------------------Filtro Cruzado------------------------------*/
 export function filtrosCruzados(array, selectOption) {
     let filteredArray;
+    console.log(filteredArray)
     if (selectOption) {
       filteredArray = filtradosPorSelect(array, selectOption);
     } else {
@@ -111,7 +120,7 @@ export function filtrosCruzados(array, selectOption) {
 /*------------------------------Tarjeta Detalles ---------------------------*/
 export function detalles(objeto, fecha){
     let propiedad = objeto.date >= fecha ? "estimate" : "assistance"
-    return `<div class="col-lg-3 col-md-4 col-sm-12 pb-3 pt-3">
+    return `<div class="col-lg-3 col-md-4 col-sm-12 pb-3 pt-3" tarjeta d-none>
     <div class="card" style="width: 18rem;">
     <img src="${objeto.image}" class="card-img-top custom-card-img" alt="food">
     <div class="card-body">
@@ -196,6 +205,7 @@ export function segundaTabla(categorias, eventos){
 
 /*--------------------------------TERCERA-TABLA-- -----------------------------*/
 export function tercerTabla(categorias, eventos){
+  console.log(eventos);
     let tabla = `
         <tr>
             <td>Categories</td>
@@ -208,6 +218,7 @@ export function tercerTabla(categorias, eventos){
         let ganancia = 0;
         let porcentaje = 0;
         eventoPorCat.forEach(e => {
+
             ganancia += (e.assistance * e.price)
             porcentaje += (e.assistance * 100 / e.capacity)/(eventoPorCat.length)
         })
@@ -220,3 +231,31 @@ export function tercerTabla(categorias, eventos){
     });
     return tabla;
 }
+
+export function filtroFechaUpcoming(events, currentDate){
+let upConmingEvents= events.filter(evento => evento.date>currentDate);
+return upConmingEvents;
+}
+/*------------------------------------------*/
+export function filtroFechaPastEvents(events, currentDate){
+
+  let pastEvents= events.filter(evento => evento.date<currentDate);
+  
+  return pastEvents;
+  }
+/*------------------------------------------*/
+export function search(searchValue, impEvents) {
+  console.log(searchValue);
+  for (let i = 0; i < impEvents.length; i++) {
+    let valor = (impEvents[i].textContent).toLowerCase();
+    if (!valor.includes(searchValue)) {
+      impEvents[i].classList.add("d-none")
+    }else{
+      impEvents[i].classList.remove("d-none")
+    };
+  }
+  
+ 
+  
+}
+   
