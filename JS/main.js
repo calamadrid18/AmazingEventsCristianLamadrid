@@ -8,9 +8,6 @@ const contenedoresCards = document.getElementById("contenedoresCards");
 const searchDiv = (document.querySelector(".nina"));
 
 
-
-console.log(searchDiv);
-
 fetch(URL_API)
   .then(response => response.json())
   .then(data => {
