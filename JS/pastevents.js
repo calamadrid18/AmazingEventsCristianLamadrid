@@ -6,7 +6,7 @@ const URL_API = 'https://mindhub-xj03.onrender.com/api/amazing';
 const contenedorChecks = document.getElementById("contenedorChecks");
 const select = document.getElementById("selects");
 const contenedoresCards = document.getElementById("contenedoresCards");
-const searchDiv = (document.querySelector(".nina"));
+const searchDiv = (document.querySelector(".name"));
 
 fetch(URL_API)
   .then(response => response.json())

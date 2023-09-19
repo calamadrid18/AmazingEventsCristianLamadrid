@@ -106,16 +106,15 @@ export function filtradosPorSelect(array, selectOption) {
   }
 
 /*-----------------------------Filtro Cruzado------------------------------*/
-export function filtrosCruzados(array, selectOption) {
-    let filteredArray;
-    console.log(filteredArray)
-    if (selectOption) {
-      filteredArray = filtradosPorSelect(array, selectOption);
-    } else {
-      filteredArray = filtradoPorCheck(array);
-    }
-    return filteredArray;
+export function filtrosCruzados(events, selectedCategories) {
+  if (!selectedCategories || selectedCategories.length === 0) {
+    // Si no se seleccionan categorías, devolver todos los eventos
+    return events;
+  } else {
+    // Filtrar eventos en función de las categorías seleccionadas
+    return events.filter((evento) => selectedCategories.includes(evento.category));
   }
+}
 
 /*------------------------------Tarjeta Detalles ---------------------------*/
 export function detalles(objeto, fecha){
@@ -245,7 +244,7 @@ export function filtroFechaPastEvents(events, currentDate){
   }
 /*------------------------------------------*/
 export function search(searchValue, impEvents) {
-  console.log(searchValue);
+  
   for (let i = 0; i < impEvents.length; i++) {
     let valor = (impEvents[i].textContent).toLowerCase();
     if (!valor.includes(searchValue)) {
@@ -253,9 +252,12 @@ export function search(searchValue, impEvents) {
     }else{
       impEvents[i].classList.remove("d-none")
     };
-  }
-  
- 
-  
+  };
+};
+
+export function obtenerCategoriasSeleccionadas() {
+  const checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+  const selectedCategories = Array.from(checkboxes).map((checkbox) => checkbox.value);
+  return selectedCategories;
 }
-   
+
