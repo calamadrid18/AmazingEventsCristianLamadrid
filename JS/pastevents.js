@@ -1,7 +1,6 @@
-import { imprimirCheckBox, imprimirSelect, imprimirCards,  filtrosCruzados, filtroFechaPastEvents, search} from "../modules/function.js";
+import { imprimirCheckBox, imprimirSelect, imprimirCards,  filtrosCruzados, filtroFechaPastEvents, search } from "../modules/function.js";
 
 const URL_API = 'https://mindhub-xj03.onrender.com/api/amazing';
-
 
 const contenedorChecks = document.getElementById("contenedorChecks");
 const select = document.getElementById("selects");
@@ -12,17 +11,20 @@ fetch(URL_API)
   .then(response => response.json())
   .then(data => {
     const events = data.events;
-    const currentDate= data.currentDate;
-    const arrayNombreEvents = events.map(objetoEvents => objetoEvents.name);
-    let pastEvents=filtroFechaPastEvents(events,currentDate)
+    const currentDate = data.currentDate;
+
+    // Filtra eventos del pasado
+    const pastEvents = filtroFechaPastEvents(events, currentDate);
+
     imprimirCards(pastEvents, contenedoresCards);
 
     let listaCategorias = new Set(pastEvents.map(objetoEvents => objetoEvents.category));
     imprimirCheckBox(contenedorChecks, Array.from(listaCategorias));
 
     contenedorChecks.addEventListener("change", () => {
-      const returnCruzados = filtrosCruzados(pastEvents, null);
-      imprimirCards(returnCruzados, contenedoresCards);
+      const selectedCategories = obtenerCategoriasSeleccionadas();
+      const eventosFiltrados = filtradoPorCheck(pastEvents, selectedCategories);
+      imprimirCards(eventosFiltrados, contenedoresCards);
     });
 
     select.addEventListener("change", () => {
@@ -33,9 +35,26 @@ fetch(URL_API)
   })
   .catch(err => console.log(err));
 
-  searchDiv.addEventListener("keyup",()=>{
-    let impEvents= document.querySelectorAll(".tarjeta")
-    console.log(impEvents);
-    let searchValue = searchDiv.value;
-    search(searchValue,impEvents)
-  })
+searchDiv.addEventListener("keyup", () => {
+  let impEvents = document.querySelectorAll(".tarjeta");
+  let searchValue = searchDiv.value;
+  search(searchValue, impEvents);
+});
+
+// Función para obtener las categorías seleccionadas en las casillas de verificación
+function obtenerCategoriasSeleccionadas() {
+  const checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+  const selectedCategories = Array.from(checkboxes).map(checkbox => checkbox.value);
+  return selectedCategories;
+}
+
+
+function filtradoPorCheck(events, selectedCategories) {
+  if (!selectedCategories || selectedCategories.length === 0) {
+    // Si no se seleccionan categorías, devolver todos los eventos
+    return events;
+  } else {
+    // Filtrar eventos en función de las categorías seleccionadas
+    return events.filter((evento) => selectedCategories.includes(evento.category));
+  }
+}

@@ -254,10 +254,3 @@ export function search(searchValue, impEvents) {
     };
   };
 };
-
-export function obtenerCategoriasSeleccionadas() {
-  const checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
-  const selectedCategories = Array.from(checkboxes).map((checkbox) => checkbox.value);
-  return selectedCategories;
-}
-
